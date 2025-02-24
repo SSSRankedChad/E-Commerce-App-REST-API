@@ -94,4 +94,4 @@ const { DB } = require('./config.js');
   } catch (err) {
     console.log("ERROR CREATING ONE OR MORE TABLES: ", err);
   }
-}
+});
