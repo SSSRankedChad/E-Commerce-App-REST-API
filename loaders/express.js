@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const session = require("express-session");
 const {SESSION_SECRET} = require('../config');
 
-
 module.exports = (app) => {
 
   //Implement CORS middleware 
@@ -13,17 +12,22 @@ module.exports = (app) => {
   //Parse the req.body into JSON
   app.use(bodyParser.json());
 
-  app.use('trust proxy', 1);
+  app.use(bodyParser.urlencoded( {extended: true}));
+
+  app.set('trust proxy', 1);
  
   //Creates a session
-  app.use(session({
-    session: SESSION_SECRET,
-    resave: false, 
-    saveUninitialized: false,
-    cookie: {
-      secure: false,
-      maxAge: 24 * 24 * 60 * 1000,
-    }
-  }))
+  app.use(
+     session({
+       secret: SESSION_SECRET,
+       resave: false, 
+       saveUninitialized: false,
+       cookie: {
+          secure: false,
+          maxAge: 24 * 24 * 60 * 1000,
+       }
+  }));
+
+ return app;
 }
 

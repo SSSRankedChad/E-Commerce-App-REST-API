@@ -1,4 +1,4 @@
-const express = require('expres');
+const express = require('express');
 const router = express.Router();
 const UserService = require('../services/UserService.js');
 const UserServiceInstance = new UserService();

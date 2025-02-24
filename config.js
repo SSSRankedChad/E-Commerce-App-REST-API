@@ -1,3 +1,5 @@
+const dotenv = require('dotenv').config();
+
 module.exports = {
   PORT: process.env.PORT,
   DB: {
@@ -6,5 +8,5 @@ module.exports = {
     PGPORT: process.env.PGPORT,
     PGPASSWORD: process.env.PGPASSWORD,
   },
-  SESSION_SECRET: process.env.SESSION_SECRET;
+  SESSION_SECRET: process.env.SESSION_SECRET,
 }
