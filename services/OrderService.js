@@ -1,5 +1,5 @@
-const orderModel= require('../components/order.js');
-const orderItemModel = require('../components/orderItem.js');
+const orderModel= require('../models/order.js');
+const orderItemModel = require('../models/orderItem.js');
 
 module.exports = class OrderService {
   async find(data){

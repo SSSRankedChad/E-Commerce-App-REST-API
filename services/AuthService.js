@@ -1,5 +1,5 @@
 const createError = require('http-errors');
-const userModel = require('../components/user.js');
+const userModel = require('../models/user.js');
 const userModelInstance = new userModel();
 
 module.exports = class AuthService {

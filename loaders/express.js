@@ -1,11 +1,12 @@
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require("express-session");
-const {SESSION_SECRET} = require('../config');
+const dotenv = require('dotenv').config();
+const { SESSION_SECRET } = require('../config.env');
 
 module.exports = (app) => {
-
-  //Implement CORS middleware 
+  //Implement CORS middleware
+  //
 
   app.use(cors());
 
